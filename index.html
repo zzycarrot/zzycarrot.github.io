@@ -152,6 +152,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Auspiciousness" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/07/24/Auspiciousness/">Auspiciousness</a>
+    </h1>
+  
+
+        
+        <a href="/2023/07/24/Auspiciousness/" class="archive-article-date">
+  	<time datetime="2023-07-24T13:31:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Auspiciousness"><a href="#Auspiciousness" class="headerlink" title="Auspiciousness"></a><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/57357/B">Auspiciousness</a></h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/57357/B">https://ac.nowcoder.com/acm/contest/57357/B</a><br>来源：牛客网</p>
+<p><em>Dog Card</em> is a card game. In the game, there are a total of 2n cards in the deck, each card has a value, and the values of these 2n cards form a permutation of 1∼2n. There is a skill that works as follows:</p>
+<ol>
+<li>​        Draw a card from the top of the deck. </li>
+<li>​        If the deck is empty, then skip to step 333, otherwise you guess whether the card on the top of the deck has a higher value than your last drawn card and draw a card from the top of the deck. If your guess is correct, then repeat this step, otherwise skip to step 3. </li>
+<li>​        End this process. </li>
+</ol>
+<p>Nana enjoys playing this game, although she may not be skilled at it. Therefore, her guessing strategy when using this skill is simple: if the value of the last drawn card is less than or equal to nnn, then she guesses that the next card’s value is higher; otherwise, she guesses that the next card’s value is lower. She wants to know, for all different decks of cards (Obviously, there are (2n)! cases), how many cards she can draw in total if she uses the skill only once in each case. Since this number can be very large, please provide the answer modulo a given value.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> C[<span class="number">311</span>][<span class="number">311</span>];</span><br><span class="line"><span class="keyword">int</span> A[<span class="number">611</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(C,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(C));</span><br><span class="line">    <span class="built_in">memset</span>(A,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(A));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)C[i][<span class="number">0</span>]=C[i][i]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;j++)C[i][j]=(C[i<span class="number">-1</span>][j]+C[i<span class="number">-1</span>][j<span class="number">-1</span>])%m;</span><br><span class="line">    &#125;</span><br><span class="line">    A[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)A[i]+=A[i<span class="number">-1</span>]*i%m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">301</span>][<span class="number">301</span>][<span class="number">2</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="built_in">init</span>(n,m);</span><br><span class="line">    ans=A[n*<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i==<span class="number">0</span>&amp;&amp;j==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> u=j;u&gt;=<span class="number">1</span>;u--)&#123;</span><br><span class="line">                dp[i][j][<span class="number">0</span>]+=dp[i][j-u][<span class="number">1</span>]*C[n-j+u][u];</span><br><span class="line">                dp[i][j][<span class="number">0</span>]%=m;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> u=i;u&gt;=<span class="number">1</span>;u--)&#123;</span><br><span class="line">                dp[i][j][<span class="number">1</span>]+=dp[i-u][j][<span class="number">0</span>]*C[n-i+u][u];</span><br><span class="line">                dp[i][j][<span class="number">1</span>]%=m;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i==n&amp;&amp;j==n)<span class="keyword">continue</span>;</span><br><span class="line">            ans+=(dp[i][j][<span class="number">0</span>]+dp[i][j][<span class="number">1</span>])*A[n*<span class="number">2</span>-i-j];</span><br><span class="line">            ans%=m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/07/24/Auspiciousness/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
