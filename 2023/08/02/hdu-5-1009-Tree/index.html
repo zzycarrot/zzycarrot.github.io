@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://114.115.139.120">
-  <title>Auspiciousness | Hexo</title>
+  <title>hdu_5_1009_Tree | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AuspiciousnessDescription链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;57357&#x2F;B来源：牛客网 Dog Card is a card game. In the game, there are a total of 2n cards in the deck, each card has a value, and the values of">
+  <meta name="description" content="Tree题目概念看起来很唬人，其实就是做一个树上dp； 转移的时候，深度等于重链本身所形成的树的深度，加上重链沿伸出的子树的深度的最大值。 (hdu登不上去，先放个标程占个位) 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;bits&#x2F;st">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Auspiciousness">
-<meta property="og:url" content="http://114.115.139.120/2023/07/24/Auspiciousness/index.html">
+<meta property="og:title" content="hdu_5_1009_Tree">
+<meta property="og:url" content="http://114.115.139.120/2023/08/02/hdu-5-1009-Tree/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="AuspiciousnessDescription链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;57357&#x2F;B来源：牛客网 Dog Card is a card game. In the game, there are a total of 2n cards in the deck, each card has a value, and the values of">
+<meta property="og:description" content="Tree题目概念看起来很唬人，其实就是做一个树上dp； 转移的时候，深度等于重链本身所形成的树的深度，加上重链沿伸出的子树的深度的最大值。 (hdu登不上去，先放个标程占个位) 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;bits&#x2F;st">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-07-24T13:31:49.000Z">
-<meta property="article:modified_time" content="2023-07-24T13:40:07.982Z">
+<meta property="article:published_time" content="2023-08-02T13:21:12.000Z">
+<meta property="article:modified_time" content="2023-08-02T13:32:24.751Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,35 +154,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Auspiciousness" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hdu-5-1009-Tree" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Auspiciousness
+      hdu_5_1009_Tree
     </h1>
   
 
         
-        <a href="/2023/07/24/Auspiciousness/" class="archive-article-date">
-  	<time datetime="2023-07-24T13:31:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-24</time>
+        <a href="/2023/08/02/hdu-5-1009-Tree/" class="archive-article-date">
+  	<time datetime="2023-08-02T13:21:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Auspiciousness"><a href="#Auspiciousness" class="headerlink" title="Auspiciousness"></a><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/57357/B">Auspiciousness</a></h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/57357/B">https://ac.nowcoder.com/acm/contest/57357/B</a><br>来源：牛客网</p>
-<p><em>Dog Card</em> is a card game. In the game, there are a total of 2n cards in the deck, each card has a value, and the values of these 2n cards form a permutation of 1∼2n. There is a skill that works as follows:</p>
-<ol>
-<li>​        Draw a card from the top of the deck. </li>
-<li>​        If the deck is empty, then skip to step 333, otherwise you guess whether the card on the top of the deck has a higher value than your last drawn card and draw a card from the top of the deck. If your guess is correct, then repeat this step, otherwise skip to step 3. </li>
-<li>​        End this process. </li>
-</ol>
-<p>Nana enjoys playing this game, although she may not be skilled at it. Therefore, her guessing strategy when using this skill is simple: if the value of the last drawn card is less than or equal to nnn, then she guesses that the next card’s value is higher; otherwise, she guesses that the next card’s value is lower. She wants to know, for all different decks of cards (Obviously, there are (2n)! cases), how many cards she can draw in total if she uses the skill only once in each case. Since this number can be very large, please provide the answer modulo a given value.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> C[<span class="number">311</span>][<span class="number">311</span>];</span><br><span class="line"><span class="keyword">int</span> A[<span class="number">611</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(C,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(C));</span><br><span class="line">    <span class="built_in">memset</span>(A,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(A));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)C[i][<span class="number">0</span>]=C[i][i]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;j++)C[i][j]=(C[i<span class="number">-1</span>][j]+C[i<span class="number">-1</span>][j<span class="number">-1</span>])%m;</span><br><span class="line">    &#125;</span><br><span class="line">    A[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)A[i]+=A[i<span class="number">-1</span>]*i%m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">301</span>][<span class="number">301</span>][<span class="number">2</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="built_in">init</span>(n,m);</span><br><span class="line">    ans=A[n*<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i==<span class="number">0</span>&amp;&amp;j==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> u=j;u&gt;=<span class="number">1</span>;u--)&#123;</span><br><span class="line">                dp[i][j][<span class="number">0</span>]+=dp[i][j-u][<span class="number">1</span>]*C[n-j+u][u];</span><br><span class="line">                dp[i][j][<span class="number">0</span>]%=m;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> u=i;u&gt;=<span class="number">1</span>;u--)&#123;</span><br><span class="line">                dp[i][j][<span class="number">1</span>]+=dp[i-u][j][<span class="number">0</span>]*C[n-i+u][u];</span><br><span class="line">                dp[i][j][<span class="number">1</span>]%=m;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i==n&amp;&amp;j==n)<span class="keyword">continue</span>;</span><br><span class="line">            ans+=(dp[i][j][<span class="number">0</span>]+dp[i][j][<span class="number">1</span>])*A[n*<span class="number">2</span>-i-j];</span><br><span class="line">            ans%=m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/contest/problem?cid=1098&pid=1009">Tree</a></h1><p>题目概念看起来很唬人，其实就是做一个树上dp；</p>
+<p>转移的时候，深度等于重链本身所形成的树的深度，加上重链沿伸出的子树的深度的最大值。</p>
+<p>(hdu登不上去，先放个标程占个位)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> i64 = <span class="keyword">int64_t</span>;</span><br><span class="line"><span class="keyword">using</span> u32 = <span class="keyword">uint32_t</span>;</span><br><span class="line"><span class="keyword">using</span> u64 = <span class="keyword">uint64_t</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1</span> &lt;&lt; <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ch[N];</span><br><span class="line"><span class="keyword">int</span> dp[N];</span><br><span class="line"><span class="keyword">int</span> node[N];</span><br><span class="line"><span class="keyword">int</span> head[N];</span><br><span class="line"><span class="keyword">int</span> next[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">    node[u] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> v = head[u]; v; v = next[v]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (v == ch[u]) &#123;</span><br><span class="line">            <span class="built_in">solve</span>(v, w);</span><br><span class="line">            node[u] = node[v] + <span class="number">2</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">solve</span>(v, v);</span><br><span class="line">            dp[w] = std::<span class="built_in">max</span>(dp[w], dp[v] + std::__lg(node[v]) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    std::cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">auto</span> ii = [&amp;]() &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        std::cin &gt;&gt; x;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">auto</span> oo = [&amp;](<span class="keyword">auto</span> x, <span class="keyword">char</span> c = <span class="number">10</span>) &#123;</span><br><span class="line">        std::cout &lt;&lt; x &lt;&lt; c &lt;&lt; std::flush;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">int</span> T = <span class="built_in">ii</span>();</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">ii</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> f = <span class="built_in">ii</span>();</span><br><span class="line">            next[i] = head[f];</span><br><span class="line">            head[f] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) ch[i] = <span class="built_in">ii</span>();</span><br><span class="line">        <span class="built_in">solve</span>(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">oo</span>(dp[<span class="number">1</span>] + std::__lg(node[<span class="number">1</span>]) + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i) ch[i] = dp[i] = node[i] = head[i] = next[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -242,7 +237,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://114.115.139.120/2023/07/24/Auspiciousness/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://114.115.139.120/2023/08/02/hdu-5-1009-Tree/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -256,18 +251,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/08/02/hdu-5-1009-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hdu_5_1009_Tree
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/10/31/my-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">my first blog</div>
+    <a href="/2023/07/24/Auspiciousness/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Auspiciousness</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -295,7 +281,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Auspiciousness" data-title="Auspiciousness" data-url="http://114.115.139.120/2023/07/24/Auspiciousness/"></div>
+	<div class="ds-thread" data-thread-key="hdu-5-1009-Tree" data-title="hdu_5_1009_Tree" data-url="http://114.115.139.120/2023/08/02/hdu-5-1009-Tree/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -318,8 +304,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://114.115.139.120/2023/07/24/Auspiciousness/", 
-    sourceId: "Auspiciousness",
+    url: "http://114.115.139.120/2023/08/02/hdu-5-1009-Tree/", 
+    sourceId: "hdu-5-1009-Tree",
     productKey: "flase",
     target: "cloud-tie-wrapper"
   };
@@ -328,7 +314,7 @@
   
 
   
-  <div id="SOHUCS" sid="Auspiciousness" ></div> 
+  <div id="SOHUCS" sid="hdu-5-1009-Tree" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
